@@ -1,6 +1,7 @@
 package com.magarex.memelord.di.modules.viewmodel;
 
 import com.magarex.memelord.ui.base.ViewModelFactory;
+import com.magarex.memelord.ui.login.LoginViewModel;
 import com.magarex.memelord.ui.main.MainViewModel;
 
 import androidx.lifecycle.ViewModel;
@@ -19,5 +20,10 @@ public abstract class ViewModelFactoryModule {
     @IntoMap
     @ViewModelKey(MainViewModel.class)
     abstract ViewModel bindMainViewModel(MainViewModel viewModel);
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(LoginViewModel.class)
+    abstract ViewModel bindLoginViewModel(LoginViewModel viewModel);
 
 }

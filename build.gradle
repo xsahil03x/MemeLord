@@ -5,11 +5,13 @@ buildscript {
     repositories {
         google()
         jcenter()
+        maven { url 'https://maven.fabric.io/public' }
+
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.2.1'
         classpath 'com.google.gms:google-services:4.0.1'
-
+        classpath 'io.fabric.tools:gradle:1.26.1'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -19,6 +21,7 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven { url 'https://maven.google.com/' }
         maven { url "https://jitpack.io" }
     }
 }
@@ -29,9 +32,12 @@ task clean(type: Delete) {
 ext {
     constraint_layout_version = '2.0.0-alpha2'
     firebase_version = '16.0.4'
-    appcompat_version = '1.0.0'
+    appcompat_version = '1.0.2'
     lifecycle_version = '2.0.0'
+    crashlytics_version = '2.9.6'
     glide_version = '4.8.0'
+    remote_config_version = '16.1.0'
+    material_component_version = '1.0.0-beta01'
     dagger_version = '2.16'
     retrofit_version = '2.4.0'
     moshi_version = '1.7.0'

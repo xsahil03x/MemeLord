@@ -2,6 +2,7 @@ package com.magarex.memelord;
 
 import dagger.android.AndroidInjector;
 import dagger.android.support.DaggerApplication;
+
 import com.magarex.memelord.di.DaggerAppComponent;
 
 public class MemeLordApp extends DaggerApplication {

@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
+apply plugin: 'io.fabric'
 
 android {
     compileSdkVersion 28
@@ -33,6 +34,22 @@ dependencies {
 
     // Firebase
     implementation "com.google.firebase:firebase-core:$firebase_version"
+    implementation "com.crashlytics.sdk.android:crashlytics:$crashlytics_version"
+    implementation "com.google.firebase:firebase-config:$remote_config_version"
+    implementation "com.google.firebase:firebase-storage:$firebase_version"
+    implementation "com.google.firebase:firebase-database:$firebase_version"
+    implementation "com.google.firebase:firebase-auth:$firebase_version"
+
+    // FirebaseUI for Firebase Auth
+    implementation 'com.firebaseui:firebase-ui-auth:4.2.1'
+    implementation 'com.facebook.android:facebook-android-sdk:4.38.1'
+    implementation 'com.twitter.sdk.android:twitter-core:3.3.0'
+
+    // FirebaseUI for Cloud Storage
+    implementation 'com.firebaseui:firebase-ui-storage:4.2.1'
+
+    // Material Component
+    implementation "com.google.android.material:material:$material_component_version"
 
     // Constraint Layout
     implementation "androidx.constraintlayout:constraintlayout:$constraint_layout_version"
@@ -75,6 +92,6 @@ dependencies {
     implementation "com.github.sharish:ShimmerRecyclerView:$shimmer_version"
 
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.1.0-beta02'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-beta02'
+    androidTestImplementation 'androidx.test:runner:1.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
 }

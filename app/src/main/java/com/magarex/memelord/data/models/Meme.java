@@ -2,8 +2,17 @@ package com.magarex.memelord.data.models;
 
 import com.squareup.moshi.Json;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "memes")
 public class Meme {
 
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "memeid")
+    private int memeId;
     @Json(name = "id")
     private String id;
     @Json(name = "name")
@@ -14,6 +23,24 @@ public class Meme {
     private Integer width;
     @Json(name = "height")
     private Integer height;
+
+    public Meme(int memeId, String id, String name, String url, Integer width, Integer height) {
+        this.memeId = memeId;
+        this.id = id;
+        this.name = name;
+        this.url = url;
+        this.width = width;
+        this.height = height;
+    }
+
+    @Ignore
+    public Meme(String id, String name, String url, Integer width, Integer height) {
+        this.id = id;
+        this.name = name;
+        this.url = url;
+        this.width = width;
+        this.height = height;
+    }
 
     public String getId() {
         return id;
@@ -53,5 +80,13 @@ public class Meme {
 
     public void setHeight(Integer height) {
         this.height = height;
+    }
+
+    public int getMemeId() {
+        return memeId;
+    }
+
+    public void setMemeId(int memeId) {
+        this.memeId = memeId;
     }
 }
