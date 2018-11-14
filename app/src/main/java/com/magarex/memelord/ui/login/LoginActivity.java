@@ -53,12 +53,14 @@ public class LoginActivity extends BaseActivity<LoginViewModel, ActivityLoginBin
         // Choose authentication providers
         List<AuthUI.IdpConfig> providers = Arrays.asList(
                 new AuthUI.IdpConfig.GoogleBuilder().build(),
+                new AuthUI.IdpConfig.FacebookBuilder().build(),
                 new AuthUI.IdpConfig.TwitterBuilder().build());
         // Create and launch sign-in intent
         startActivityForResult(
                 AuthUI.getInstance()
                         .createSignInIntentBuilder()
                         .setAvailableProviders(providers)
+                        .setTheme(R.style.AppTheme_FullScreen)
                         .setLogo(R.drawable.com_facebook_button_login_logo)
                         .build(),
                 RC_SIGN_IN);

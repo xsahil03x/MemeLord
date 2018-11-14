@@ -2,6 +2,7 @@ package com.magarex.memelord.ui.login;
 
 import com.magarex.memelord.data.UserRepository;
 import com.magarex.memelord.data.remote.OperationStatus;
+import com.magarex.memelord.data.remote.UserRepositoryImpl;
 import com.magarex.memelord.ui.base.BaseViewModel;
 
 import javax.inject.Inject;
@@ -14,10 +15,10 @@ import androidx.lifecycle.LiveData;
  **/
 public class LoginViewModel extends BaseViewModel {
 
-    private UserRepository userRepository;
+    private UserRepositoryImpl userRepository;
 
     @Inject
-    LoginViewModel(UserRepository userRepository) {
+    LoginViewModel(UserRepositoryImpl userRepository) {
         this.userRepository = userRepository;
     }
 

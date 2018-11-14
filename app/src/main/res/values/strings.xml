@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Meme Lord</string>
+    <string name="facebook_application_id" translatable="false">2221432267889873</string>
+    <string name="facebook_login_protocol_scheme" translatable="false">fb2221432267889873</string>
+    <string name="twitter_consumer_key" translatable="false">hAUfZ1AtW3n8bxkLN7iTxkXpj</string>
+    <string name="twitter_consumer_secret" translatable="false">qQO87sY6iHwqr9hhoZyZbBhsa0090JgzqEyoeQdH1X9aj487tv</string>
 </resources>

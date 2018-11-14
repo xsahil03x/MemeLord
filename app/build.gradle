@@ -6,10 +6,11 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.magarex.memelord"
-        minSdkVersion 23
+        minSdkVersion 16
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
+        resConfigs "en"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -42,8 +43,8 @@ dependencies {
 
     // FirebaseUI for Firebase Auth
     implementation 'com.firebaseui:firebase-ui-auth:4.2.1'
-    implementation 'com.facebook.android:facebook-android-sdk:4.38.1'
-    implementation 'com.twitter.sdk.android:twitter-core:3.3.0'
+    implementation 'com.facebook.android:facebook-login:4.38.1'
+    implementation("com.twitter.sdk.android:twitter-core:3.3.0@aar") { transitive = true }
 
     // FirebaseUI for Cloud Storage
     implementation 'com.firebaseui:firebase-ui-storage:4.2.1'
