@@ -6,17 +6,31 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.magarex.memelord"
-        minSdkVersion 16
+        minSdkVersion 23
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         resConfigs "en"
+        multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
+    signingConfigs {
+        releaseConfig {
+            keyAlias GenKeyAlias
+            keyPassword GenKeyPassword
+            storePassword GenKeystorePassword
+            storeFile file('keys/ReleaseKey.jks')
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
+            shrinkResources false
+            useProguard false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.releaseConfig
         }
     }
     compileOptions {
@@ -28,7 +42,7 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
 
     // AppCompat
     implementation "androidx.appcompat:appcompat:$appcompat_version"
@@ -44,7 +58,7 @@ dependencies {
     // FirebaseUI for Firebase Auth
     implementation 'com.firebaseui:firebase-ui-auth:4.2.1'
     implementation 'com.facebook.android:facebook-login:4.38.1'
-    implementation("com.twitter.sdk.android:twitter-core:3.3.0@aar") { transitive = true }
+    implementation('com.twitter.sdk.android:twitter-core:3.3.0@aar') { transitive = true }
 
     // FirebaseUI for Cloud Storage
     implementation 'com.firebaseui:firebase-ui-storage:4.2.1'
@@ -91,7 +105,6 @@ dependencies {
 
     // ShimmerView
     implementation "com.github.sharish:ShimmerRecyclerView:$shimmer_version"
-
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
