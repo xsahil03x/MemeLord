@@ -6,15 +6,24 @@ import java.util.List;
 
 public class MemeResponse {
 
-    @Json(name = "memes")
-    private List<Meme> memes = null;
+    @Json(name = "success")
+    private Boolean success;
+    @Json(name = "data")
+    private MemeData data;
 
-    public List<Meme> getMemes() {
-        return memes;
+    public Boolean getSuccess() {
+        return success;
     }
 
-    public void setMemes(List<Meme> memes) {
-        this.memes = memes;
+    public void setSuccess(Boolean success) {
+        this.success = success;
     }
 
+    public MemeData getData() {
+        return data;
+    }
+
+    public void setData(MemeData data) {
+        this.data = data;
+    }
 }

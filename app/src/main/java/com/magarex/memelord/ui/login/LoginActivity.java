@@ -39,14 +39,9 @@ public class LoginActivity extends BaseActivity<LoginViewModel, ActivityLoginBin
         super.onCreate(savedInstanceState);
 
         // TODO perform internet connectivity check here and take appropriate action
+        launchLogin();
+        getFCMToken();
 
-        // Check if the user has already logged in
-        if (FirebaseAuth.getInstance().getCurrentUser() != null) {
-            navigateToHome();
-        } else {
-            launchLogin();
-            getFCMToken();
-        }
     }
 
     private void launchLogin() {
@@ -60,16 +55,10 @@ public class LoginActivity extends BaseActivity<LoginViewModel, ActivityLoginBin
                 AuthUI.getInstance()
                         .createSignInIntentBuilder()
                         .setAvailableProviders(providers)
-                        .setTheme(R.style.AppTheme_FullScreen)
+                        .setTheme(R.style.AppTheme_MemeLord_FullScreen)
                         .setLogo(R.drawable.com_facebook_button_login_logo)
                         .build(),
                 RC_SIGN_IN);
-    }
-
-    private void navigateToHome() {
-        Intent homeScreenIntent = new Intent(this, MainActivity.class);
-        startActivity(homeScreenIntent);
-        finish();
     }
 
     private void getFCMToken() {
@@ -120,5 +109,11 @@ public class LoginActivity extends BaseActivity<LoginViewModel, ActivityLoginBin
                 finish();
             }
         }
+    }
+
+    private void navigateToHome() {
+        Intent homeScreenIntent = new Intent(this, MainActivity.class);
+        startActivity(homeScreenIntent);
+        finish();
     }
 }

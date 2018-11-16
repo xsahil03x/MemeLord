@@ -4,4 +4,9 @@
     <string name="facebook_login_protocol_scheme" translatable="false">fb2221432267889873</string>
     <string name="twitter_consumer_key" translatable="false">hAUfZ1AtW3n8bxkLN7iTxkXpj</string>
     <string name="twitter_consumer_secret" translatable="false">qQO87sY6iHwqr9hhoZyZbBhsa0090JgzqEyoeQdH1X9aj487tv</string>
+    <string name="title_home">Home</string>
+    <string name="title_profile">Profile</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
