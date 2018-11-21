@@ -22,7 +22,7 @@ import dagger.android.support.DaggerFragment;
 public abstract class BaseFragment<VM extends BaseViewModel, VDB extends ViewDataBinding> extends DaggerFragment {
 
     @Inject
-    public ViewModelProvider.Factory viewModelFactory;
+    ViewModelProvider.Factory viewModelFactory;
 
     private VM viewModel;
     private VDB viewDataBinding;

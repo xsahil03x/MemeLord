@@ -2,6 +2,11 @@ package com.magarex.memelord.di.modules;
 
 import com.magarex.memelord.di.scopes.PerActivity;
 import com.magarex.memelord.di.scopes.PerFragment;
+import com.magarex.memelord.di.scopes.PerService;
+import com.magarex.memelord.services.FetchMemeTemplatesJob;
+import com.magarex.memelord.ui.addmeme.AddMemeActivity;
+import com.magarex.memelord.ui.addmeme.PostMemeFragment;
+import com.magarex.memelord.ui.addmeme.SelectAndEditFragment;
 import com.magarex.memelord.ui.login.LoginActivity;
 import com.magarex.memelord.ui.main.HomeFragment;
 import com.magarex.memelord.ui.main.MainActivity;
@@ -19,6 +24,10 @@ public abstract class ActivityBindingModule {
     @ContributesAndroidInjector()
     public abstract LoginActivity bindLoginActivity();
 
+    @PerActivity
+    @ContributesAndroidInjector()
+    public abstract AddMemeActivity bindAddMemeActivity();
+
     // Fragments
 
     @PerFragment
@@ -28,4 +37,18 @@ public abstract class ActivityBindingModule {
     @PerFragment
     @ContributesAndroidInjector()
     public abstract ProfileFragment bindProfileFragment();
+
+    @PerFragment
+    @ContributesAndroidInjector()
+    public abstract PostMemeFragment bindPostMemeFragment();
+
+    @PerFragment
+    @ContributesAndroidInjector()
+    public abstract SelectAndEditFragment bindSelectAndEditFragment();
+
+    // Services
+
+    @PerService
+    @ContributesAndroidInjector()
+    public abstract FetchMemeTemplatesJob bindFetchMemeTemplateJob();
 }

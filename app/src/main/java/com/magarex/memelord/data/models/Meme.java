@@ -1,13 +1,7 @@
 package com.magarex.memelord.data.models;
 
-import android.widget.ImageView;
-
-import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
-import com.bumptech.glide.request.RequestOptions;
-import com.magarex.memelord.utils.GlideApp;
 import com.squareup.moshi.Json;
 
-import androidx.databinding.BindingAdapter;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.Ignore;

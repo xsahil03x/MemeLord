@@ -2,7 +2,7 @@ package com.magarex.memelord.data.remote;
 
 import com.magarex.memelord.data.models.MemeResponse;
 
-import retrofit2.Call;
+import io.reactivex.Observable;
 import retrofit2.http.GET;
 
 /**
@@ -10,5 +10,5 @@ import retrofit2.http.GET;
  **/
 public interface MemeApi {
     @GET("get_memes")
-    Call<MemeResponse> getMemeTemplates();
+    Observable<MemeResponse> getMemeTemplates();
 }

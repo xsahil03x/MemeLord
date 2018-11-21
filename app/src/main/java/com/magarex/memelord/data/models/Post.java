@@ -1,36 +1,47 @@
 package com.magarex.memelord.data.models;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.DiffUtil;
+
 /**
  * Created by sahil on 14/11/18.
  **/
 public class Post {
 
-    private String postIdentifier;
-    private String postName;
+    private String postId;
     private String caption;
     private String uploader;
-    private String uploaderId;
-    private long commentsCount;
     private long upvoteCount;
     private String downloadURL;
     private long timestamp;
     private String uploaderPic;
 
-    public String getPostIdentifier() {
-        return postIdentifier;
+    public Post() {
     }
 
-    public void setPostIdentifier(String postIdentifier) {
-        this.postIdentifier = postIdentifier;
+    public Post(String postId, String caption, String uploader, long upvoteCount, String downloadURL, long timestamp, String uploaderPic) {
+        this.postId = postId;
+        this.caption = caption;
+        this.uploader = uploader;
+        this.upvoteCount = upvoteCount;
+        this.downloadURL = downloadURL;
+        this.timestamp = timestamp;
+        this.uploaderPic = uploaderPic;
     }
 
-    public String getPostName() {
-        return postName;
-    }
+    public static final DiffUtil.ItemCallback<Post> DIFF_CALLBACK = new DiffUtil.ItemCallback<Post>() {
 
-    public void setPostName(String postName) {
-        this.postName = postName;
-    }
+        @Override
+        public boolean areItemsTheSame(Post oldItem, Post newItem) {
+            return oldItem.getPostId().equals(newItem.getPostId());
+        }
+
+        @Override
+        public boolean areContentsTheSame(@NonNull Post oldItem, @NonNull Post newItem) {
+            return true;
+        }
+    };
+
 
     public String getCaption() {
         return caption;
@@ -46,22 +57,6 @@ public class Post {
 
     public void setUploader(String uploader) {
         this.uploader = uploader;
-    }
-
-    public String getUploaderId() {
-        return uploaderId;
-    }
-
-    public void setUploaderId(String uploaderId) {
-        this.uploaderId = uploaderId;
-    }
-
-    public long getCommentsCount() {
-        return commentsCount;
-    }
-
-    public void setCommentsCount(long commentsCount) {
-        this.commentsCount = commentsCount;
     }
 
     public long getUpvoteCount() {
@@ -94,5 +89,13 @@ public class Post {
 
     public void setUploaderPic(String uploaderPic) {
         this.uploaderPic = uploaderPic;
+    }
+
+    public String getPostId() {
+        return postId;
+    }
+
+    public void setPostId(String postId) {
+        this.postId = postId;
     }
 }

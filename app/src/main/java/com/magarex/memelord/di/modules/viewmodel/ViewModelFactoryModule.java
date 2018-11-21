@@ -1,5 +1,6 @@
 package com.magarex.memelord.di.modules.viewmodel;
 
+import com.magarex.memelord.ui.addmeme.AddMemeViewModel;
 import com.magarex.memelord.ui.base.ViewModelFactory;
 import com.magarex.memelord.ui.login.LoginViewModel;
 import com.magarex.memelord.ui.main.HomeViewModel;
@@ -27,6 +28,11 @@ public abstract class ViewModelFactoryModule {
     @IntoMap
     @ViewModelKey(LoginViewModel.class)
     abstract ViewModel bindLoginViewModel(LoginViewModel viewModel);
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(AddMemeViewModel.class)
+    abstract ViewModel bindAddMemeViewModel(AddMemeViewModel viewModel);
 
     @Binds
     @IntoMap

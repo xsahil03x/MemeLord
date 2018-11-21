@@ -6,6 +6,8 @@ package com.magarex.memelord.utils;
 public class FirebasePaths {
 
     public static final String PHOTOS_DB_PATH = "photos";
+    public static final String POSTS_DB_PATH = "posts";
+    public static final String POSTS_STORAGE_PATH = "posts";
     public static final String PHOTOS_TIMESTAMP_PATH = "timestamp";
     public static final String PHOTOS_UPVOTE_COUNT_PATH = "upvoteCount";
 

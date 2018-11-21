@@ -1,21 +1,24 @@
 package com.magarex.memelord.data.models;
 
+import com.magarex.memelord.utils.FirebasePaths;
+
 /**
  * Created by sahil on 14/11/18.
  **/
 public class User {
 
     private String userId;
-    private boolean uploadPermission = true;
     private String profilePicURL;
     private String signInService; // google or twitter
     private String signInServiceIdentifier;
     private String displayName;
     private String fcmToken;
 
-    public User(String userId, boolean uploadPermission, String profilePicURL, String signInService, String signInServiceIdentifier, String displayName, String fcmToken) {
+    public User() {
+    }
+
+    public User(String userId, String profilePicURL, String signInService, String signInServiceIdentifier, String displayName, String fcmToken) {
         this.userId = userId;
-        this.uploadPermission = uploadPermission;
         this.profilePicURL = profilePicURL;
         this.signInService = signInService;
         this.signInServiceIdentifier = signInServiceIdentifier;
@@ -29,14 +32,6 @@ public class User {
 
     public void setUserId(String userId) {
         this.userId = userId;
-    }
-
-    public boolean isUploadPermission() {
-        return uploadPermission;
-    }
-
-    public void setUploadPermission(boolean uploadPermission) {
-        this.uploadPermission = uploadPermission;
     }
 
     public String getProfilePicURL() {

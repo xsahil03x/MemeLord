@@ -53,15 +53,21 @@ dependencies {
     implementation "com.google.firebase:firebase-config:$remote_config_version"
     implementation "com.google.firebase:firebase-storage:$firebase_version"
     implementation "com.google.firebase:firebase-database:$firebase_version"
-    implementation "com.google.firebase:firebase-auth:$firebase_version"
+    implementation "com.google.firebase:firebase-messaging:$fcm_version"
+    implementation "com.google.firebase:firebase-auth:$auth_version"
+    implementation "com.firebase:firebase-jobdispatcher:$job_dispatcher_version"
 
     // FirebaseUI for Firebase Auth
-    implementation 'com.firebaseui:firebase-ui-auth:4.2.1'
+    implementation "com.firebaseui:firebase-ui-auth:$firebase_ui_version"
+    implementation "com.firebaseui:firebase-ui-storage:$firebase_ui_version"
     implementation 'com.facebook.android:facebook-login:4.38.1'
     implementation('com.twitter.sdk.android:twitter-core:3.3.0@aar') { transitive = true }
 
     // FirebaseUI for Cloud Storage
-    implementation 'com.firebaseui:firebase-ui-storage:4.2.1'
+    implementation "androidx.room:room-rxjava2:2.1.0-alpha02"
+
+    // Photo Editor
+    implementation "ja.burhanrashid52:photoeditor:$photo_editor_version"
 
     // Material Component
     implementation "com.google.android.material:material:$material_component_version"
@@ -74,14 +80,17 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-moshi:$retrofit_version"
     implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
 
+    // Easy Permissions
+    implementation "pub.devrel:easypermissions:$easy_permission_version"
+
+    // Moshi
+    implementation "com.squareup.moshi:moshi:$moshi_version"
+
     // Dagger
     implementation "com.google.dagger:dagger:$dagger_version"
     implementation "com.google.dagger:dagger-android-support:$dagger_version"
     annotationProcessor "com.google.dagger:dagger-compiler:$dagger_version"
     annotationProcessor "com.google.dagger:dagger-android-processor:$dagger_version"
-
-    // Moshi
-    implementation "com.squareup.moshi:moshi:$moshi_version"
 
     // Rx-Android
     implementation "io.reactivex.rxjava2:rxandroid:$rx_version"
@@ -95,13 +104,15 @@ dependencies {
     // Lifecycle
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
 
-    // Stetho
-    implementation 'com.facebook.stetho:stetho:1.5.0'
-    implementation 'com.facebook.stetho:stetho-okhttp3:1.5.0'
-
     // Glide
     implementation "com.github.bumptech.glide:glide:$glide_version"
     annotationProcessor "com.github.bumptech.glide:compiler:$glide_version"
+
+    // CircleImageView
+    implementation "de.hdodenhof:circleimageview:$circle_imageview_version"
+
+    // Zoomy
+    implementation "com.ablanco.zoomy:zoomy:$zoomy_version"
 
     // ShimmerView
     implementation "com.github.sharish:ShimmerRecyclerView:$shimmer_version"
