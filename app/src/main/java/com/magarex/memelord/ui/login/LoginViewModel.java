@@ -15,10 +15,10 @@ import androidx.lifecycle.LiveData;
  **/
 public class LoginViewModel extends BaseViewModel {
 
-    private UserRepositoryImpl userRepository;
+    private UserRepository userRepository;
 
     @Inject
-    LoginViewModel(UserRepositoryImpl userRepository) {
+    LoginViewModel(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 

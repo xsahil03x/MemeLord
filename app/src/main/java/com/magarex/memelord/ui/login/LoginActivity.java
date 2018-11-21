@@ -87,10 +87,22 @@ public class LoginActivity extends BaseActivity<LoginViewModel, ActivityLoginBin
                 String provider = response == null ? "Firebase" : response.getProviderType();
                 String providerId = user.getEmail();
                 String userId = user.getUid();
-                String profilePic = user.getPhotoUrl() == null ? null : user.getPhotoUrl()
-                        .toString();
                 String displayName = user.getDisplayName();
-
+                String pic = user.getPhotoUrl() == null ? null : user.getPhotoUrl().toString();
+                String profilePic;
+                switch (provider) {
+                    case "twitter.com":
+                        profilePic = pic != null ? pic.replace("normal", "400x400") : null;
+                        break;
+                    case "facebook.com":
+                        profilePic = pic != null ? pic.concat("?height=300") : null;
+                        break;
+                    case "google.com":
+                        profilePic = pic != null ? pic.replace("s96-c", "s300-c") : null;
+                        break;
+                    default:
+                        profilePic = pic;
+                }
 
                 getViewModel().updateCurrentUserInfo(userId, provider, profilePic, providerId,
                         displayName, fcmToken)
