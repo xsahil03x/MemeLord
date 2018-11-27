@@ -11,7 +11,7 @@ import androidx.lifecycle.LiveData;
  **/
 public interface UserRepository {
 
-    LiveData<User> getUserInfo(String userId);
+    LiveData<User> getUserInfo(@NonNull String userId);
 
     LiveData<OperationStatus> updateMyInfo(String userId, String provider, String
             profilePic, String providerIdentifier, String displayName, String fcmToken);

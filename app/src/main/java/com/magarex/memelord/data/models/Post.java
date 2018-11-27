@@ -11,6 +11,7 @@ public class Post {
     private String postId;
     private String caption;
     private String uploader;
+    private String uploaderId;
     private long upvoteCount;
     private String downloadURL;
     private long timestamp;
@@ -19,10 +20,11 @@ public class Post {
     public Post() {
     }
 
-    public Post(String postId, String caption, String uploader, long upvoteCount, String downloadURL, long timestamp, String uploaderPic) {
+    public Post(String postId, String caption, String uploader, String uploaderId, long upvoteCount, String downloadURL, long timestamp, String uploaderPic) {
         this.postId = postId;
         this.caption = caption;
         this.uploader = uploader;
+        this.uploaderId = uploaderId;
         this.upvoteCount = upvoteCount;
         this.downloadURL = downloadURL;
         this.timestamp = timestamp;
@@ -59,13 +61,6 @@ public class Post {
         this.uploader = uploader;
     }
 
-    public long getUpvoteCount() {
-        return upvoteCount;
-    }
-
-    public void setUpvoteCount(long upvoteCount) {
-        this.upvoteCount = upvoteCount;
-    }
 
     public String getDownloadURL() {
         return downloadURL;
@@ -97,5 +92,21 @@ public class Post {
 
     public void setPostId(String postId) {
         this.postId = postId;
+    }
+
+    public long getUpvoteCount() {
+        return upvoteCount;
+    }
+
+    public void setUpvoteCount(long upvoteCount) {
+        this.upvoteCount = upvoteCount;
+    }
+
+    public String getUploaderId() {
+        return uploaderId;
+    }
+
+    public void setUploaderId(String uploaderId) {
+        this.uploaderId = uploaderId;
     }
 }

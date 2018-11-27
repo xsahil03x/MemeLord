@@ -10,8 +10,8 @@ import android.widget.Toast;
 
 import com.magarex.memelord.R;
 import com.magarex.memelord.databinding.ActivityMainBinding;
-import com.magarex.memelord.services.MemeTemplateJobUtilities;
 import com.magarex.memelord.ui.addmeme.AddMemeActivity;
+import com.magarex.memelord.ui.leaderboard.LeaderBoardActivity;
 import com.magarex.memelord.utils.AppUtils;
 
 import java.util.List;
@@ -40,11 +40,15 @@ public class MainActivity extends AppCompatActivity implements ActivityCompat.On
         setSupportActionBar(mainBinding.mainToolbar);
         prepareBottomNavBar();
         if (savedInstanceState == null) {
-            MemeTemplateJobUtilities.scheduleTemplateFetch(this);
+//            MemeTemplateJobUtilities.scheduleTemplateFetch(this);
             mainBinding.mainBottomNav.setSelectedItemId(R.id.navigation_home);
         }
 
         mainBinding.fabAddMeme.setOnClickListener(v -> startAddMemeActivity());
+
+        mainBinding.mainBottomNav.setOnNavigationItemReselectedListener(item -> {
+            // Do nothing here
+        });
     }
 
     @AfterPermissionGranted(RC_STORAGE_PERM)
@@ -104,7 +108,7 @@ public class MainActivity extends AppCompatActivity implements ActivityCompat.On
                 Toast.makeText(this, "Info", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.menu_leaderboard:
-                Toast.makeText(this, "Leaderboard", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(this, LeaderBoardActivity.class));
                 break;
         }
         return true;

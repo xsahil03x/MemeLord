@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="post"
+            type="com.magarex.memelord.data.models.Post" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/ivTopUser"
+            android:layout_width="124dp"
+            android:layout_height="124dp"
+            android:layout_marginTop="48dp"
+            android:networkImage="@{post.uploaderPic}"
+            app:layout_constraintEnd_toStartOf="@+id/guideline10"
+            app:layout_constraintHorizontal_bias="0.508"
+            app:layout_constraintStart_toStartOf="@+id/guideline9"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars[3]" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.08" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.92" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTopUsers"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline10"
+            app:layout_constraintStart_toStartOf="@+id/guideline9"
+            app:layout_constraintTop_toBottomOf="@+id/tvTopUser"
+            tools:listitem="@layout/leaderboard_item" />
+
+        <TextView
+            android:id="@+id/tvTopUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@{post.uploader}"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/ivTopUser"
+            app:layout_constraintStart_toStartOf="@+id/ivTopUser"
+            app:layout_constraintTop_toBottomOf="@+id/ivTopUser"
+            tools:text="Sahil Kumar" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/position_background"
+            android:gravity="center"
+            android:text="1"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/ivTopUser"
+            app:layout_constraintEnd_toEndOf="@+id/ivTopUser"
+            app:layout_constraintStart_toStartOf="@+id/ivTopUser" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -71,8 +71,6 @@ public class AddMemeActivity extends BaseActivity<AddMemeViewModel, ActivityAddM
     }
 
     private void navigateToHome() {
-        Intent homeScreenIntent = new Intent(this, MainActivity.class);
-        startActivity(homeScreenIntent);
         finish();
     }
 }

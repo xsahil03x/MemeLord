@@ -145,6 +145,7 @@ public class PostMemeFragment extends BaseFragment<AddMemeViewModel, FragmentPos
         if (!TextUtils.isEmpty(getDataBinding().edMemeCaption.getText().toString().trim())) {
             Post post = new Post();
             post.setUploaderPic(currentUser.getProfilePicURL());
+            post.setUploaderId(currentUser.getUserId());
             post.setUploader(currentUser.getDisplayName());
             post.setCaption(getDataBinding().edMemeCaption.getText().toString().trim());
             post.setTimestamp(TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis()));

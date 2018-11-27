@@ -24,15 +24,28 @@
         </activity>
         <activity android:name=".ui.login.LoginActivity" />
         <activity android:name=".ui.main.MainActivity" />
-        <activity android:name=".ui.addmeme.AddMemeActivity"></activity>
+        <activity android:name=".ui.addmeme.AddMemeActivity" />
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_application_id" />
+
         <service
             android:name=".services.FetchMemeTemplatesJob"
             android:exported="true"
             android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <activity android:name=".ui.leaderboard.LeaderBoardActivity" />
+
+        <receiver android:name=".widget.MemeLordWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/meme_lord_widget_info" />
+        </receiver>
     </application>
 
 </manifest>

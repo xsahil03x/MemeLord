@@ -33,7 +33,7 @@ public class UserRepositoryImpl implements UserRepository {
     }
 
     @Override
-    public LiveData<User> getUserInfo(String userId) {
+    public LiveData<User> getUserInfo(@NonNull String userId) {
         FirebaseQueryLiveData userData = new FirebaseQueryLiveData(usersRef.child(userId));
         return Transformations.map(userData, input -> input.getValue(User.class));
     }

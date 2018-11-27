@@ -7,6 +7,7 @@ import com.magarex.memelord.data.remote.OperationStatus;
 
 import java.util.List;
 
+import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
 
 /**
@@ -14,8 +15,12 @@ import androidx.lifecycle.LiveData;
  **/
 public interface StorageRepository {
 
-    LiveData<OperationStatus> uploadPost(Uri imageUri, Post post);
+    LiveData<OperationStatus> uploadPost(@NonNull Uri imageUri, @NonNull Post post);
 
     LiveData<List<Post>> getAllPosts();
+
+    LiveData<List<Post>> getAllPostsOfUser(@NonNull String userId);
+
+    LiveData<OperationStatus> incrementUpvoteCount(@NonNull String photoId);
 
 }

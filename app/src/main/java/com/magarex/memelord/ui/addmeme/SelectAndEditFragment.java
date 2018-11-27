@@ -113,7 +113,6 @@ public class SelectAndEditFragment extends BaseFragment<AddMemeViewModel,
             GlideApp.with(this)
                     .load(meme.getUrl())
                     .dontAnimate()
-                    .apply(RequestOptions.bitmapTransform(new RoundedCorners(8)))
                     .into(getDataBinding().ivEditMeme.getSource());
         });
     }

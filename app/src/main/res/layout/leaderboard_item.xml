@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="position"
+            type="String" />
+
+        <variable
+            name="post"
+            type="com.magarex.memelord.data.models.Post" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivTopUser"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:networkImage="@{post.uploaderPic}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvPosition"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/backgrounds/scenic[5]" />
+
+        <TextView
+            android:id="@+id/tvTopUser"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            android:text="@{post.uploader}"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/ivTopUser"
+            app:layout_constraintEnd_toStartOf="@+id/tvTotalLits"
+            app:layout_constraintStart_toEndOf="@+id/ivTopUser"
+            app:layout_constraintTop_toTopOf="@+id/ivTopUser"
+            tools:text="Sahil Kumar" />
+
+        <TextView
+            android:id="@+id/tvPosition"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/position_background"
+            android:gravity="center"
+            android:text="@{position}"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/ivTopUser"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ivTopUser"
+            tools:text="2" />
+
+        <TextView
+            android:id="@+id/tvTotalLits"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="@{String.valueOf(post.upvoteCount)+` Lits`}"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/tvTopUser"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvTopUser"
+            tools:text="240 Lits" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
