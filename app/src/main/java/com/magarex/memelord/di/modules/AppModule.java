@@ -9,11 +9,13 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.magarex.memelord.data.LeaderBoardRepository;
 import com.magarex.memelord.data.MemeTemplateRepository;
 import com.magarex.memelord.data.StorageRepository;
 import com.magarex.memelord.data.UserRepository;
 import com.magarex.memelord.data.local.MemeDao;
 import com.magarex.memelord.data.local.MemeDatabase;
+import com.magarex.memelord.data.remote.LeaderBoardRepositoryImpl;
 import com.magarex.memelord.data.remote.MemeApi;
 import com.magarex.memelord.data.remote.MemeTemplateRepositoryImpl;
 import com.magarex.memelord.data.remote.StorageRepositoryImpl;
@@ -99,6 +101,12 @@ public abstract class AppModule {
     @Singleton
     static StorageRepository provideStorageRepository(DatabaseReference databaseReference, StorageReference storageReference) {
         return new StorageRepositoryImpl(databaseReference, storageReference);
+    }
+
+    @Provides
+    @Singleton
+    static LeaderBoardRepository provideLeaderBoardRepository(DatabaseReference databaseReference) {
+        return new LeaderBoardRepositoryImpl(databaseReference);
     }
 
     @Provides

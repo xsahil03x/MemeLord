@@ -7,6 +7,7 @@ import com.magarex.memelord.services.FetchMemeTemplatesJob;
 import com.magarex.memelord.ui.addmeme.AddMemeActivity;
 import com.magarex.memelord.ui.addmeme.PostMemeFragment;
 import com.magarex.memelord.ui.addmeme.SelectAndEditFragment;
+import com.magarex.memelord.ui.leaderboard.LeaderBoardActivity;
 import com.magarex.memelord.ui.login.LoginActivity;
 import com.magarex.memelord.ui.main.HomeFragment;
 import com.magarex.memelord.ui.main.MainActivity;
@@ -27,6 +28,10 @@ public abstract class ActivityBindingModule {
     @PerActivity
     @ContributesAndroidInjector()
     public abstract AddMemeActivity bindAddMemeActivity();
+
+    @PerActivity
+    @ContributesAndroidInjector()
+    public abstract LeaderBoardActivity bindLeaderBoardActivity();
 
     // Fragments
 

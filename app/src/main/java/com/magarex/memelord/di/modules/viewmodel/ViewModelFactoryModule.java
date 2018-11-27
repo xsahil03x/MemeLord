@@ -2,9 +2,9 @@ package com.magarex.memelord.di.modules.viewmodel;
 
 import com.magarex.memelord.ui.addmeme.AddMemeViewModel;
 import com.magarex.memelord.ui.base.ViewModelFactory;
+import com.magarex.memelord.ui.leaderboard.LeaderBoardViewModel;
 import com.magarex.memelord.ui.login.LoginViewModel;
 import com.magarex.memelord.ui.main.HomeViewModel;
-import com.magarex.memelord.ui.main.MainViewModel;
 import com.magarex.memelord.ui.main.ProfileViewModel;
 
 import androidx.lifecycle.ViewModel;
@@ -18,11 +18,6 @@ public abstract class ViewModelFactoryModule {
 
     @Binds
     abstract ViewModelProvider.Factory bindViewModelFactory(ViewModelFactory factory);
-
-    @Binds
-    @IntoMap
-    @ViewModelKey(MainViewModel.class)
-    abstract ViewModel bindMainViewModel(MainViewModel viewModel);
 
     @Binds
     @IntoMap
@@ -43,5 +38,10 @@ public abstract class ViewModelFactoryModule {
     @IntoMap
     @ViewModelKey(ProfileViewModel.class)
     abstract ViewModel bindProfileViewModel(ProfileViewModel viewModel);
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(LeaderBoardViewModel.class)
+    abstract ViewModel bindLeaderBoardViewModel(LeaderBoardViewModel viewModel);
 
 }
