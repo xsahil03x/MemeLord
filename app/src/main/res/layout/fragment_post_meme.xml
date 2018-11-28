@@ -24,9 +24,9 @@
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/ivProfilePic"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_marginTop="16dp"
+                android:layout_width="@dimen/circle_image_size_48"
+                android:layout_height="@dimen/circle_image_size_48"
+                android:layout_marginTop="@dimen/margin_16"
                 android:networkImage="@{user.profilePicURL}"
                 app:layout_constraintStart_toStartOf="@+id/guideline4"
                 app:layout_constraintTop_toTopOf="parent"
@@ -36,7 +36,7 @@
                 android:id="@+id/ivFinalMeme"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_margin="@dimen/margin_8"
                 android:adjustViewBounds="true"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -48,10 +48,10 @@
                 android:id="@+id/edMemeCaption"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="@dimen/margin_16"
                 android:background="@android:color/transparent"
                 android:gravity="start"
-                android:hint="Brace the world with your caption..."
+                android:hint="@string/caption_hint"
                 android:inputType="textMultiLine"
                 android:singleLine="false"
                 android:textColor="@color/grey"
@@ -77,37 +77,18 @@
                 android:id="@+id/tvUserName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="8dp"
+                android:layout_marginStart="@dimen/margin_16"
+                android:layout_marginEnd="@dimen/margin_8"
                 android:text="@{user.displayName}"
                 android:textColor="@color/grey"
-                android:textSize="18sp"
+                android:textSize="@dimen/text_size_18"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/ivProfilePic"
                 app:layout_constraintEnd_toStartOf="@+id/guideline5"
                 app:layout_constraintStart_toEndOf="@+id/ivProfilePic"
                 app:layout_constraintTop_toTopOf="@+id/ivProfilePic"
-                app:layout_constraintVertical_bias="0.0"
                 tools:text="Sahil Kumar" />
 
-            <TextView
-                android:id="@+id/tvCurrentRank"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:layout_marginEnd="8dp"
-                android:text="Android Developer"
-                android:textColor="@color/grey"
-                app:layout_constraintEnd_toStartOf="@+id/guideline5"
-                app:layout_constraintStart_toStartOf="@+id/tvUserName"
-                app:layout_constraintTop_toBottomOf="@+id/tvUserName" />
-
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:layout_constraintGuide_begin="252dp" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </layout>

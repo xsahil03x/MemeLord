@@ -6,8 +6,8 @@
 
     <View
         android:id="@+id/color_picker_view"
-        android:layout_width="40dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/color_picker_size"
+        android:layout_height="@dimen/color_picker_size"
         android:layout_alignParentTop="true"
         android:background="@color/darkGrey"
         tools:text="" />

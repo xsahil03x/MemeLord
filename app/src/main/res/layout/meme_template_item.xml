@@ -12,8 +12,8 @@
     <com.google.android.material.circularreveal.cardview.CircularRevealCardView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        app:cardElevation="8dp"
-        app:cardCornerRadius="8dp">
+        app:cardElevation="@dimen/margin_8"
+        app:cardCornerRadius="@dimen/margin_8">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layoutMemeTemplateItem"

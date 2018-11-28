@@ -17,4 +17,8 @@
     <string name="weeks_ago">" weeks ago"</string>
     <string name="appwidget_text">EXAMPLE</string>
     <string name="add_widget">Add widget</string>
+    <string name="text_done">Done</string>
+    <string name="caption_hint">Brace the world with your caption...</string>
+    <string name="empty_profile_text">Oops nothing here...Try to add some memes.</string>
+    <string name="my_dank_memes">My Dank Memes</string>
 </resources>

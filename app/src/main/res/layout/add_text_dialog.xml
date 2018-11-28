@@ -13,13 +13,13 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_margin="20dp"
+        android:layout_margin="@dimen/margin_20"
         android:background="@drawable/select_border"
-        android:padding="10dp"
-        android:text="Done"
+        android:padding="@dimen/margin_10"
+        android:text="@string/text_done"
         android:textAllCaps="false"
         android:textColor="@color/tw__solid_white"
-        android:textSize="15sp" />
+        android:textSize="@dimen/text_size_15" />
 
     <EditText
         android:id="@+id/add_text_edit_text"
@@ -30,7 +30,7 @@
         android:background="@null"
         android:gravity="center"
         android:inputType="textMultiLine"
-        android:textSize="40sp" />
+        android:textSize="@dimen/text_size_40" />
 
     <RelativeLayout
         android:id="@+id/add_text_color_picker_relative_layout"

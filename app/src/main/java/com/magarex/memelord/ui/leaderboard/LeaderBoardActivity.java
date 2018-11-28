@@ -3,20 +3,12 @@ package com.magarex.memelord.ui.leaderboard;
 import android.os.Bundle;
 
 import com.magarex.memelord.R;
-import com.magarex.memelord.data.models.Post;
 import com.magarex.memelord.databinding.ActivityLeaderBoardBinding;
 import com.magarex.memelord.ui.base.BaseActivity;
-import com.magarex.memelord.ui.main.FeedAdapter;
-import com.magarex.memelord.utils.FeedSpacingItemDecoration;
 
-import java.util.List;
-
-import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import static com.magarex.memelord.utils.AppUtils.dpToPx;
 
 public class LeaderBoardActivity extends BaseActivity<LeaderBoardViewModel, ActivityLeaderBoardBinding> implements LeaderBoardAdapter.LeaderBoardClickListener {
 
@@ -49,8 +41,6 @@ public class LeaderBoardActivity extends BaseActivity<LeaderBoardViewModel, Acti
         leaderBoardAdapter = new LeaderBoardAdapter(this);
         RecyclerView rvTopUsers = getBinding().rvTopUsers;
         rvTopUsers.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
-        rvTopUsers.addItemDecoration(new FeedSpacingItemDecoration(
-                1, dpToPx(16), true));
         rvTopUsers.setItemAnimator(new DefaultItemAnimator());
         rvTopUsers.setAdapter(leaderBoardAdapter);
     }

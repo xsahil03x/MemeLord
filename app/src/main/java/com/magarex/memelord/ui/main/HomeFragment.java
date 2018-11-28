@@ -18,11 +18,15 @@ import com.magarex.memelord.databinding.FragmentHomeBinding;
 import com.magarex.memelord.ui.base.BaseFragment;
 import com.magarex.memelord.utils.FeedSpacingItemDecoration;
 
+import java.util.List;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import static com.magarex.memelord.utils.AppUtils.dpToPx;
 
@@ -63,17 +67,6 @@ public class HomeFragment extends BaseFragment<HomeViewModel, FragmentHomeBindin
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         prepareViews();
-        setupSwipeToRefresh();
-    }
-
-    private void setupSwipeToRefresh() {
-        getDataBinding().srlPosts.setOnRefreshListener(() -> getViewModel().getPostList().observe(
-                this, postList -> {
-                    if (postList.isEmpty())
-                        feedAdapter.addPostsToList(postList);
-                    getDataBinding().srlPosts.setRefreshing(false);
-                }
-        ));
     }
 
     private void prepareViews() {
@@ -84,7 +77,10 @@ public class HomeFragment extends BaseFragment<HomeViewModel, FragmentHomeBindin
                 1, dpToPx(16), true));
         rvPosts.setItemAnimator(new DefaultItemAnimator());
         rvPosts.setAdapter(feedAdapter);
-        getViewModel().getPostList().observe(this, feedAdapter::addPostsToList);
+        getViewModel().getPostList().observe(this, postList -> {
+            feedAdapter.addPostsToList(postList);
+            getDataBinding().pbPosts.setVisibility(View.GONE);
+        });
     }
 
     @Override
@@ -100,7 +96,7 @@ public class HomeFragment extends BaseFragment<HomeViewModel, FragmentHomeBindin
 
     @Override
     public void onPostDoubleTap(ImageView litButton, ImageView bigLitButton, Post post) {
-
+        Log.d(TAG, "onPostDoubleTap: " + post.getPostId());
     }
 
 

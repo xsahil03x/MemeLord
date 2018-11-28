@@ -8,14 +8,14 @@
         android:id="@+id/ivWidgetMeme"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
+        android:layout_margin="@dimen/margin_8"
         android:adjustViewBounds="true"
         tools:src="@drawable/select_border" />
 
     <ImageView
         android:id="@+id/ivWidgetMemeUploader"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="@dimen/circle_image_size_48"
+        android:layout_height="@dimen/circle_image_size_48"
         android:layout_gravity="bottom|end"
         android:layout_margin="8dp"
         tools:src="@drawable/ic_check_white_24dp" />

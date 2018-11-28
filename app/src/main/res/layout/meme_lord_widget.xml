@@ -10,12 +10,12 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_margin="8dp"
+        android:layout_margin="@dimen/margin_8"
         android:background="#09C"
         android:contentDescription="@string/appwidget_text"
         android:text="@string/appwidget_text"
-        android:textColor="#ffffff"
-        android:textSize="24sp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_24"
         android:textStyle="bold|italic" />
 
 </RelativeLayout>

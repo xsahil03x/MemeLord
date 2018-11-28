@@ -6,5 +6,23 @@ Refer to App Widget Documentation for margin information
 http://developer.android.com/guide/topics/appwidgets/index.html#CreatingLayout
     -->
     <dimen name="widget_margin">8dp</dimen>
+    <dimen name="ivTopUserDimen">124dp</dimen>
+    <dimen name="margin_48">48dp</dimen>
+    <dimen name="margin_16">16dp</dimen>
+    <dimen name="margin_24">24dp</dimen>
+    <dimen name="margin_8">8dp</dimen>
+    <dimen name="margin_12">12dp</dimen>
+    <dimen name="text_size_30">30sp</dimen>
+    <dimen name="margin_20">20dp</dimen>
+    <dimen name="margin_10">10dp</dimen>
+    <dimen name="text_size_15">15sp</dimen>
+    <dimen name="text_size_40">40sp</dimen>
+    <dimen name="color_picker_size">50dp</dimen>
+    <dimen name="circle_image_size_48">48dp</dimen>
+    <dimen name="text_size_18">18sp</dimen>
+    <dimen name="margin_32">32dp</dimen>
+    <dimen name="profile_pic_dimen">150dp</dimen>
+    <dimen name="circle_leaderboard_dimen">56dp</dimen>
+    <dimen name="text_size_24">24sp</dimen>
 
 </resources>

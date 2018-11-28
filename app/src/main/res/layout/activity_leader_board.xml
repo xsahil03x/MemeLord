@@ -17,12 +17,11 @@
 
         <ImageView
             android:id="@+id/ivTopUser"
-            android:layout_width="124dp"
-            android:layout_height="124dp"
-            android:layout_marginTop="48dp"
+            android:layout_width="@dimen/ivTopUserDimen"
+            android:layout_height="@dimen/ivTopUserDimen"
+            android:layout_marginTop="@dimen/margin_48"
             android:networkImage="@{post.uploaderPic}"
             app:layout_constraintEnd_toStartOf="@+id/guideline10"
-            app:layout_constraintHorizontal_bias="0.508"
             app:layout_constraintStart_toStartOf="@+id/guideline9"
             app:layout_constraintTop_toTopOf="parent"
             tools:srcCompat="@tools:sample/avatars[3]" />
@@ -45,7 +44,7 @@
             android:id="@+id/rvTopUsers"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="@dimen/margin_16"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/guideline10"
             app:layout_constraintStart_toStartOf="@+id/guideline9"
@@ -56,7 +55,7 @@
             android:id="@+id/tvTopUser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="@dimen/margin_16"
             android:text="@{post.uploader}"
             android:textSize="24sp"
             android:textStyle="bold"
@@ -67,9 +66,9 @@
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginBottom="8dp"
+            android:layout_width="@dimen/margin_24"
+            android:layout_height="@dimen/margin_24"
+            android:layout_marginBottom="@dimen/margin_8"
             android:background="@drawable/position_background"
             android:gravity="center"
             android:text="1"

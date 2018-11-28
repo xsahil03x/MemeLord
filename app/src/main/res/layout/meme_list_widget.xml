@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="18sp"
+        android:textSize="@dimen/text_size_18"
         android:textStyle="bold|italic"
         android:visibility="gone"
         tools:text="Launch app to populate widget" />
