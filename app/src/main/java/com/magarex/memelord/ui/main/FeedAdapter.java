@@ -25,7 +25,6 @@ import androidx.recyclerview.widget.RecyclerView;
  **/
 public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.FeedViewHolder> {
 
-    private ConstraintSet constraintSet;
     private static final String TAG = "FeedAdapter";
     private List<Post> postList;
     private FeedClickListener feedClickListener;
@@ -34,7 +33,6 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.FeedViewHolder
     FeedAdapter(FeedClickListener feedClickListener, Activity mActivity) {
         this.feedClickListener = feedClickListener;
         this.mActivity = mActivity;
-        this.constraintSet = new ConstraintSet();
     }
 
     void addPostsToList(List<Post> postList) {
@@ -90,11 +88,18 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.FeedViewHolder
 
         @Override
         public void onClick(View v) {
+            try {
+                feedClickListener.onLitButtonPress(postList.get(getAdapterPosition()));
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             feedClickListener.onProfilePicTap(postList.get(getAdapterPosition()).getUploader());
         }
     }
 
     interface FeedClickListener {
+
+        void onLitButtonPress(Post post) throws InterruptedException;
 
         void onPostDoubleTap(ImageView litButton, ImageView bigLitButton, Post post) throws InterruptedException;
 

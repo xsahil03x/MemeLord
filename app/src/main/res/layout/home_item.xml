@@ -16,6 +16,18 @@
         android:layout_height="wrap_content"
         android:background="@color/white">
 
+        <ImageView
+            android:id="@+id/ivBigLit"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:elevation="16dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/ivMeme"
+            app:layout_constraintEnd_toEndOf="@+id/ivMeme"
+            app:layout_constraintStart_toStartOf="@+id/ivMeme"
+            app:layout_constraintTop_toTopOf="@+id/ivMeme"
+            app:srcCompat="@drawable/ic_fire_white_24dp" />
+
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/ivProfilePicture"
             android:layout_width="48dp"
@@ -101,18 +113,6 @@
             app:layout_constraintTop_toBottomOf="@+id/ivLit"
             tools:text="Brace the world with this powerful Meme... I'm the only memeLord present in this World.... Ha Ha ha..." />
 
-        <ImageView
-            android:id="@+id/ivBigLit"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="@+id/ivMeme"
-            app:layout_constraintEnd_toEndOf="@+id/ivMeme"
-            app:layout_constraintStart_toStartOf="@id/ivMeme"
-            app:layout_constraintTop_toTopOf="@+id/ivMeme"
-            app:srcCompat="@drawable/ic_fire_white_24dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

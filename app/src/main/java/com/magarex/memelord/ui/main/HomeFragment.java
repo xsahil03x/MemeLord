@@ -88,26 +88,7 @@ public class HomeFragment extends BaseFragment<HomeViewModel, FragmentHomeBindin
     }
 
     @Override
-    public void onPostDoubleTap(ImageView litButton, ImageView bigLitButton, Post post) throws InterruptedException {
-        Log.i(TAG, "onPostDoubleTap: " + post.getCaption());
-        Animation pulse_fade = AnimationUtils.loadAnimation(getContext(), R.anim.fire_fade_in);
-        pulse_fade.setAnimationListener(new Animation.AnimationListener() {
-            @Override
-            public void onAnimationStart(Animation animation) {
-                bigLitButton.setVisibility(View.VISIBLE);
-            }
-
-            @Override
-            public void onAnimationEnd(Animation animation) {
-                bigLitButton.setVisibility(View.GONE);
-            }
-
-            @Override
-            public void onAnimationRepeat(Animation animation) {
-
-            }
-        });
-        bigLitButton.startAnimation(pulse_fade);
+    public void onLitButtonPress(Post post) throws InterruptedException {
         getViewModel().incrementUpvoteCount(post.getPostId()).observe(this, status -> {
             if (status.isComplete()) {
                 Toast.makeText(getContext(), "Upvoted", Toast.LENGTH_SHORT).show();
@@ -115,6 +96,11 @@ public class HomeFragment extends BaseFragment<HomeViewModel, FragmentHomeBindin
                 Toast.makeText(getContext(), status.getExtra(), Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    @Override
+    public void onPostDoubleTap(ImageView litButton, ImageView bigLitButton, Post post) {
+
     }
 
 

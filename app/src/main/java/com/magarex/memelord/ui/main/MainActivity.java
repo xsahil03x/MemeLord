@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.magarex.memelord.R;
 import com.magarex.memelord.databinding.ActivityMainBinding;
+import com.magarex.memelord.services.MemeTemplateJobUtilities;
 import com.magarex.memelord.ui.addmeme.AddMemeActivity;
 import com.magarex.memelord.ui.leaderboard.LeaderBoardActivity;
 import com.magarex.memelord.utils.AppUtils;
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements ActivityCompat.On
         setSupportActionBar(mainBinding.mainToolbar);
         prepareBottomNavBar();
         if (savedInstanceState == null) {
-//            MemeTemplateJobUtilities.scheduleTemplateFetch(this);
+            MemeTemplateJobUtilities.scheduleTemplateFetch(this);
             mainBinding.mainBottomNav.setSelectedItemId(R.id.navigation_home);
         }
 
