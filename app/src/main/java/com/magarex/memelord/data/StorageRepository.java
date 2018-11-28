@@ -19,8 +19,10 @@ public interface StorageRepository {
 
     LiveData<List<Post>> getAllPosts();
 
+    List<Post> getPostsForWidget(int limit) throws InterruptedException;
+
     LiveData<List<Post>> getAllPostsOfUser(@NonNull String userId);
 
-    LiveData<OperationStatus> incrementUpvoteCount(@NonNull String photoId);
+    LiveData<OperationStatus> incrementUpvoteCount(@NonNull String photoId) throws InterruptedException;
 
 }

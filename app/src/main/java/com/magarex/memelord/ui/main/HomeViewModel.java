@@ -29,7 +29,7 @@ public class HomeViewModel extends BaseViewModel {
         postList = getAllPosts();
     }
 
-    LiveData<OperationStatus> incrementUpvoteCount(String postId) {
+    LiveData<OperationStatus> incrementUpvoteCount(String postId) throws InterruptedException {
         return storageRepository.incrementUpvoteCount(postId);
     }
 

@@ -78,7 +78,13 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.FeedViewHolder
                     .interpolator(new OvershootInterpolator())
                     .tapListener(v -> Log.i(TAG, "prepareViews: TAP"))
                     .longPressListener(v -> Log.i(TAG, "prepareViews: LongPress"))
-                    .doubleTapListener(v -> feedClickListener.onPostDoubleTap(mBinding.ivLit, mBinding.ivBigLit, postList.get(getAdapterPosition())))
+                    .doubleTapListener(v -> {
+                        try {
+                            feedClickListener.onPostDoubleTap(mBinding.ivLit, mBinding.ivBigLit, postList.get(getAdapterPosition()));
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    })
                     .register();
         }
 
@@ -90,7 +96,7 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.FeedViewHolder
 
     interface FeedClickListener {
 
-        void onPostDoubleTap(ImageView litButton, ImageView bigLitButton, Post post);
+        void onPostDoubleTap(ImageView litButton, ImageView bigLitButton, Post post) throws InterruptedException;
 
         void onProfilePicTap(String userId);
     }

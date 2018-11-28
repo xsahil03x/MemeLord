@@ -25,6 +25,7 @@
         <activity android:name=".ui.login.LoginActivity" />
         <activity android:name=".ui.main.MainActivity" />
         <activity android:name=".ui.addmeme.AddMemeActivity" />
+        <activity android:name=".ui.leaderboard.LeaderBoardActivity" />
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
@@ -35,9 +36,11 @@
             android:exported="true"
             android:permission="android.permission.BIND_JOB_SERVICE" />
 
-        <activity android:name=".ui.leaderboard.LeaderBoardActivity" />
+        <service
+            android:name=".widget.appwidget.MemeService"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
 
-        <receiver android:name=".widget.MemeLordWidget">
+        <receiver android:name=".widget.appwidget.MemeWidget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>

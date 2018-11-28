@@ -1,0 +1,23 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/widget_margin">
+
+    <ImageView
+        android:id="@+id/ivWidgetMeme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:adjustViewBounds="true"
+        tools:src="@drawable/select_border" />
+
+    <ImageView
+        android:id="@+id/ivWidgetMemeUploader"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="8dp"
+        tools:src="@drawable/ic_check_white_24dp" />
+
+</FrameLayout>

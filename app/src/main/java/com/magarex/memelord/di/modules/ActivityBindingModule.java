@@ -1,6 +1,7 @@
 package com.magarex.memelord.di.modules;
 
 import com.magarex.memelord.di.scopes.PerActivity;
+import com.magarex.memelord.di.scopes.PerBroadcastReciever;
 import com.magarex.memelord.di.scopes.PerFragment;
 import com.magarex.memelord.di.scopes.PerService;
 import com.magarex.memelord.services.FetchMemeTemplatesJob;
@@ -12,6 +13,8 @@ import com.magarex.memelord.ui.login.LoginActivity;
 import com.magarex.memelord.ui.main.HomeFragment;
 import com.magarex.memelord.ui.main.MainActivity;
 import com.magarex.memelord.ui.main.ProfileFragment;
+import com.magarex.memelord.widget.appwidget.MemeService;
+import com.magarex.memelord.widget.appwidget.MemeWidget;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
@@ -56,4 +59,14 @@ public abstract class ActivityBindingModule {
     @PerService
     @ContributesAndroidInjector()
     public abstract FetchMemeTemplatesJob bindFetchMemeTemplateJob();
+
+    @PerService
+    @ContributesAndroidInjector()
+    public abstract MemeService bindMemeService();
+
+    // Broadcast Receivers
+
+    @PerBroadcastReciever
+    @ContributesAndroidInjector()
+    public abstract MemeWidget bindMemeWidget();
 }

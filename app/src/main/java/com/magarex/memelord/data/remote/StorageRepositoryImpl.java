@@ -21,7 +21,6 @@ import java.util.Objects;
 import javax.inject.Inject;
 
 import androidx.annotation.NonNull;
-import androidx.arch.core.util.Function;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Transformations;
@@ -101,8 +100,28 @@ public class StorageRepositoryImpl implements StorageRepository {
             }
             Collections.reverse(posts);
             return posts;
-
         });
+    }
+
+    @Override
+    public List<Post> getPostsForWidget(int limit) throws InterruptedException {
+        Query photoQuery = postsRef;
+        List<Post> posts = new ArrayList<>();
+
+        DataSnapshot dataSnapshot = (new FirebaseQueryLiveData(photoQuery)).singleFetch(limit);
+
+        if (dataSnapshot != null) {
+            for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                Post singlePost = snapshot.getValue(Post.class);
+                if (singlePost != null) {
+                    singlePost.setPostId(snapshot.getKey());
+                    posts.add(singlePost);
+                }
+            }
+            Collections.reverse(posts);
+        }
+
+        return posts;
     }
 
     @Override

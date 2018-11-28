@@ -88,7 +88,7 @@ public class HomeFragment extends BaseFragment<HomeViewModel, FragmentHomeBindin
     }
 
     @Override
-    public void onPostDoubleTap(ImageView litButton, ImageView bigLitButton, Post post) {
+    public void onPostDoubleTap(ImageView litButton, ImageView bigLitButton, Post post) throws InterruptedException {
         Log.i(TAG, "onPostDoubleTap: " + post.getCaption());
         Animation pulse_fade = AnimationUtils.loadAnimation(getContext(), R.anim.fire_fade_in);
         pulse_fade.setAnimationListener(new Animation.AnimationListener() {

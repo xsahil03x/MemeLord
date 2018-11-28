@@ -31,10 +31,6 @@ public class ProfileViewModel extends BaseViewModel {
         return userRepository.getUserInfo(userId);
     }
 
-    LiveData<OperationStatus> incrementUpvoteCount(String postId) {
-        return storageRepository.incrementUpvoteCount(postId);
-    }
-
     LiveData<List<Post>> getAllPostsOfUser(String userId) {
         return storageRepository.getAllPostsOfUser(userId);
     }
