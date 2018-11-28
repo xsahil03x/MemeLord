@@ -105,9 +105,6 @@ public class MainActivity extends AppCompatActivity implements ActivityCompat.On
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.menu_info:
-                Toast.makeText(this, "Info", Toast.LENGTH_SHORT).show();
-                break;
             case R.id.menu_leaderboard:
                 startActivity(new Intent(this, LeaderBoardActivity.class));
                 break;
