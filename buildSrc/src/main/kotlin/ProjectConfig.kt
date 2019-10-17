@@ -5,7 +5,7 @@ object Android {
 }
 
 object Kotlin {
-    private const val VERSION = "1.3.41"
+    private const val VERSION = "1.3.50"
     private const val COROUTINES_VERSION = "1.2.2"
     private const val SERIALIZATION_VERSION = "0.11.1"
 
@@ -14,6 +14,18 @@ object Kotlin {
     const val STDLIB = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$VERSION"
     const val SERIALIZATION_RUNTIME = "org.jetbrains.kotlinx:kotlinx-serialization-runtime:$SERIALIZATION_VERSION"
     const val COROUTINES = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$COROUTINES_VERSION"
+}
+
+object GoogleServices {
+    private const val VERSION = "4.0.2"
+
+    const val SERVICES = "com.google.gms:google-services:$VERSION"
+}
+
+object Fabric {
+    private const val VERSION = "1.26.1"
+
+    const val FABRIC = "io.fabric.tools:gradle:$VERSION"
 }
 
 object JUnit {
@@ -135,10 +147,10 @@ object Firebase {
 
     const val CORE = "com.google.firebase:firebase-core:$VERSION"
     const val CRASHLYTICS = "com.crashlytics.sdk.android:crashlytics:$CRASHLYTICS_VERSION"
-    const val CONFIG = "com.google.firebase:firebase-config:$REMOTE_CONFIG_VERSION"
+    const val REMOTE_CONFIG = "com.google.firebase:firebase-config:$REMOTE_CONFIG_VERSION"
     const val STORAGE = "com.google.firebase:firebase-storage:$VERSION"
     const val DATABSE = "com.google.firebase:firebase-database:$VERSION"
-    const val MESSAGING = "com.google.firebase:firebase-messaging:$FCM_VERSION"
+    const val FCM = "com.google.firebase:firebase-messaging:$FCM_VERSION"
     const val AUTH = "com.google.firebase:firebase-auth:$AUTH_VERSION"
     const val JOB_DISPATCHER = "com.firebase:firebase-jobdispatcher:$JOB_DISPATCHER_VERSION"
 
@@ -179,6 +191,12 @@ object Retrofit {
     const val CONVERTER_SERIALIZATION =
             "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:$SERIALIZATION_VERSION"
     const val RX_JAVA_ADAPTER = "com.squareup.retrofit2:adapter-rxjava2:$VERSION"
+}
+
+object Moshi {
+    private const val VERSION = "1,7.0"
+
+    const val MOSHI = "com.squareup.moshi:moshi:$VERSION"
 }
 
 object Rx {
