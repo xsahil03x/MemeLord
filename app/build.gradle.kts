@@ -123,7 +123,7 @@ dependencies {
 
     // Glide
     implementation(Glide.GLIDE)
-    annotationProcessor(Glide.PROCESSOR)
+    kapt(Glide.PROCESSOR)
 
     // CircleImageView
     implementation(CircleImageView.VIEW)

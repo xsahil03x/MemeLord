@@ -94,7 +94,7 @@ object Navigation {
 }
 
 object Glide {
-    private const val VERSION = "4.8.0"
+    private const val VERSION = "4.10.0"
 
     const val GLIDE = "com.github.bumptech.glide:glide:$VERSION"
     const val PROCESSOR = "com.github.bumptech.glide:compiler:$VERSION"
