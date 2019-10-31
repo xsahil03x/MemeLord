@@ -1,5 +1,3 @@
-import org.gradle.kotlin.dsl.kotlin
-
 plugins {
     id("com.android.application")
     kotlin("android")
@@ -64,6 +62,10 @@ android {
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
+    implementation(project(":data"))
+    implementation(project(":cache"))
+    implementation(project(":remote"))
+
     // AppCompat
     implementation(Jetpack.APPCOMPAT)
 
@@ -86,7 +88,7 @@ dependencies {
     }
 
     // FirebaseUI for Cloud Storage
-    implementation("androidx.room:room-rxjava2:2.2.0")
+    implementation("androidx.room:room-rxjava2:2.2.1")
 
     // Photo Editor
     implementation(PhotoEditor.EDITOR)
