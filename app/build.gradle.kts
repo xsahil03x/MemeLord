@@ -22,12 +22,13 @@ android {
     }
 
     signingConfigs {
-        getByName("debug") {
+        // TODO : Add debug signinConfig when firebase setup is done
+        /*getByName("debug") {
             storeFile = rootProject.file("debug.keystore")
             keyAlias = "androiddebugkey"
             keyPassword = "android"
             storePassword = "android"
-        }
+        }*/
         create("release") {
             storeFile = rootProject.file("keys/ReleaseKey.jks")
             keyAlias = System.getenv("GenKeyAlias")
@@ -37,11 +38,12 @@ android {
     }
 
     buildTypes {
-        getByName("debug") {
+        // TODO : Add debug build type when firebase setup is done
+        /*getByName("debug") {
             signingConfig = signingConfigs.getByName("debug")
-//            applicationIdSuffix = ".debug"
-//            versionNameSuffix = "-debug"
-        }
+            applicationIdSuffix = ".debug"
+            versionNameSuffix = "-debug"
+        }*/
         getByName("release") {
             isMinifyEnabled = false
             isShrinkResources = false
