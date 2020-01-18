@@ -5,6 +5,7 @@ plugins {
     kotlin("kapt")
     id("androidx.navigation.safeargs.kotlin")
     id("com.google.gms.google-services")
+    id("io.fabric")
 }
 
 android {
@@ -76,7 +77,7 @@ dependencies {
     implementation(Firebase.CRASHLYTICS)
     implementation(Firebase.REMOTE_CONFIG)
     implementation(Firebase.STORAGE)
-    implementation(Firebase.DATABSE)
+    implementation(Firebase.DATABASE)
     implementation(Firebase.FCM)
     implementation(Firebase.AUTH)
     implementation(Firebase.JOB_DISPATCHER)
@@ -90,7 +91,9 @@ dependencies {
     }
 
     // FirebaseUI for Cloud Storage
-    implementation("androidx.room:room-rxjava2:2.2.1")
+    implementation(Room.ROOM)
+    implementation(Room.RX)
+    kapt(Room.COMPILER)
 
     // Photo Editor
     implementation(PhotoEditor.EDITOR)

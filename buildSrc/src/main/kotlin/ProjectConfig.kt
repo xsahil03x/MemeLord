@@ -1,23 +1,24 @@
 object Android {
-    private const val GRADLE_PLUGIN_VERSION = "3.5.1"
+    private const val GRADLE_PLUGIN_VERSION = "3.5.2"
 
     const val GRADLE_PLUGIN = "com.android.tools.build:gradle:$GRADLE_PLUGIN_VERSION"
 }
 
 object Kotlin {
-    private const val VERSION = "1.3.50"
-    private const val COROUTINES_VERSION = "1.2.2"
-    private const val SERIALIZATION_VERSION = "0.11.1"
+    private const val VERSION = "1.3.61"
+    private const val COROUTINES_VERSION = "1.3.3"
+    private const val SERIALIZATION_VERSION = "0.14.0"
 
     const val GRADLE_PLUGIN = "org.jetbrains.kotlin:kotlin-gradle-plugin:$VERSION"
     const val SERIALIZATION_PLUGIN = "org.jetbrains.kotlin:kotlin-serialization:$VERSION"
     const val STDLIB = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$VERSION"
-    const val SERIALIZATION_RUNTIME = "org.jetbrains.kotlinx:kotlinx-serialization-runtime:$SERIALIZATION_VERSION"
+    const val SERIALIZATION_RUNTIME =
+        "org.jetbrains.kotlinx:kotlinx-serialization-runtime:$SERIALIZATION_VERSION"
     const val COROUTINES = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$COROUTINES_VERSION"
 }
 
 object GoogleServices {
-    private const val VERSION = "4.0.2"
+    private const val VERSION = "4.3.3"
 
     const val SERVICES = "com.google.gms:google-services:$VERSION"
 }
@@ -51,20 +52,20 @@ object Espresso {
 }
 
 object Material {
-    private const val VERSION = "1.1.0-alpha09"
+    private const val VERSION = "1.1.0-rc02"
 
     const val MATERIAL = "com.google.android.material:material:$VERSION"
 }
 
 object Jetpack {
     private const val ACTIVITY_KTX_VERSION = "1.1.0-alpha02"
-    private const val APPCOMPAT_VERSION = "1.1.0-rc01"
+    private const val APPCOMPAT_VERSION = "1.1.0"
     private const val CORE_KTX_VERSION = "1.2.0-alpha03"
     private const val FRAGMENT_KTX_VERSION = "1.2.0-alpha02"
     private const val PREFERENCE_KTX_VERSION = "1.1.0-rc01"
     private const val DRAWERLAYOUT_VERSION = "1.1.0-alpha02"
     private const val RECYCLERVIEW_VERSION = "1.1.0-beta02"
-    private const val CONSTRAINT_LAYOUT_VERSION = "2.0.0-beta2"
+    private const val CONSTRAINT_LAYOUT_VERSION = "2.0.0-beta3"
 
     const val ACTIVITY_KTX = "androidx.activity:activity-ktx:$ACTIVITY_KTX_VERSION"
     const val APPCOMPAT = "androidx.appcompat:appcompat:$APPCOMPAT_VERSION"
@@ -73,7 +74,16 @@ object Jetpack {
     const val PREFERENCE_KTX = "androidx.preference:preference-ktx:$PREFERENCE_KTX_VERSION"
     const val DRAWERLAYOUT = "androidx.drawerlayout:drawerlayout:$DRAWERLAYOUT_VERSION"
     const val RECYCLERVIEW = "androidx.recyclerview:recyclerview:$RECYCLERVIEW_VERSION"
-    const val CONSTRAINT_LAYOUT = "androidx.constraintlayout:constraintlayout:$CONSTRAINT_LAYOUT_VERSION"
+    const val CONSTRAINT_LAYOUT =
+        "androidx.constraintlayout:constraintlayout:$CONSTRAINT_LAYOUT_VERSION"
+}
+
+object Room {
+    private const val VERSION = "2.2.3"
+
+    const val ROOM = "androidx.room:room-runtime:$VERSION"
+    const val COMPILER = "androidx.room:room-compiler:$VERSION"
+    const val RX = "androidx.room:room-rxjava2:$VERSION"
 }
 
 object Lifecycle {
@@ -90,24 +100,25 @@ object Navigation {
 
     const val FRAGMENT_KTX = "androidx.navigation:navigation-fragment-ktx:$VERSION"
     const val UI_KTX = "androidx.navigation:navigation-ui-ktx:$VERSION"
-    const val SAFE_ARGS_GRADLE_PLUGIN = "androidx.navigation:navigation-safe-args-gradle-plugin:$VERSION"
+    const val SAFE_ARGS_GRADLE_PLUGIN =
+        "androidx.navigation:navigation-safe-args-gradle-plugin:$VERSION"
 }
 
 object Glide {
-    private const val VERSION = "4.10.0"
+    private const val VERSION = "4.11.0"
 
     const val GLIDE = "com.github.bumptech.glide:glide:$VERSION"
     const val PROCESSOR = "com.github.bumptech.glide:compiler:$VERSION"
 }
 
 object CircleImageView {
-    private const val VERSION = "2.2.0"
+    private const val VERSION = "3.0.2"
 
     const val VIEW = "de.hdodenhof:circleimageview:$VERSION"
 }
 
 object Paging {
-    private const val VERSION = "2.1.0"
+    private const val VERSION = "2.1.1"
 
     const val RUNTIME_KTX = "androidx.paging:paging-runtime-ktx:$VERSION"
 }
@@ -119,13 +130,13 @@ object Zoomy {
 }
 
 object WorkManager {
-    private const val VERSION = "2.2.0-rc01"
+    private const val VERSION = "2.2.0"
 
     const val RUNTIME_KTX = "androidx.work:work-runtime-ktx:$VERSION"
 }
 
 object PhotoEditor {
-    private const val VERSION = "0.3.3"
+    private const val VERSION = "1.0.0"
 
     const val EDITOR = "ja.burhanrashid52:photoeditor:$VERSION"
 }
@@ -149,7 +160,7 @@ object Firebase {
     const val CRASHLYTICS = "com.crashlytics.sdk.android:crashlytics:$CRASHLYTICS_VERSION"
     const val REMOTE_CONFIG = "com.google.firebase:firebase-config:$REMOTE_CONFIG_VERSION"
     const val STORAGE = "com.google.firebase:firebase-storage:$VERSION"
-    const val DATABSE = "com.google.firebase:firebase-database:$VERSION"
+    const val DATABASE = "com.google.firebase:firebase-database:$VERSION"
     const val FCM = "com.google.firebase:firebase-messaging:$FCM_VERSION"
     const val AUTH = "com.google.firebase:firebase-auth:$AUTH_VERSION"
     const val JOB_DISPATCHER = "com.firebase:firebase-jobdispatcher:$JOB_DISPATCHER_VERSION"
@@ -189,7 +200,7 @@ object Retrofit {
     const val RETROFIT = "com.squareup.retrofit2:retrofit:$VERSION"
     const val CONVERTER_MOSHI = "com.squareup.retrofit2:converter-moshi:$VERSION"
     const val CONVERTER_SERIALIZATION =
-            "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:$SERIALIZATION_VERSION"
+        "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:$SERIALIZATION_VERSION"
     const val RX_JAVA_ADAPTER = "com.squareup.retrofit2:adapter-rxjava2:$VERSION"
 }
 

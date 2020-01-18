@@ -219,11 +219,6 @@ public class SelectAndEditFragment extends BaseFragment<AddMemeViewModel,
     }
 
     @Override
-    public void onRemoveViewListener(int numberOfAddedViews) {
-
-    }
-
-    @Override
     public void onRemoveViewListener(ViewType viewType, int numberOfAddedViews) {
         if (viewType == ViewType.TEXT && numberOfAddedViews < 1)
             captionAdded = false;
