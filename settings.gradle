@@ -1,2 +1,2 @@
-include ':app'
+include ':app', ':cache', ':data', ':domain', ':remote', ':presentation'
 rootProject.name='MemeLordV2'
